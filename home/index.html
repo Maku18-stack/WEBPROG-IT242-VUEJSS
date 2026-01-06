@@ -1,40 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My first Vue page</title>
-  <style>
-    #app {
-      display: inline-block;
-      padding: 10px;
-      font-size: x-large;
-      background-color: lightgreen;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>My Vue & Profile Page</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
 
-<h1>Vue Example</h1>
+  <!-- ================= Vue Section ================= -->
+  <section>
+    <h1>Vue Basics Example</h1>
+    <p>
+      This message is displayed using Vue’s data binding.
+    </p>
 
-<p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+    <div id="app">
+      {{ greeting }}
+    </div>
+  </section>
 
-<div id="app">
-  {{ message }}
-</div>
+  <script>
+    const { createApp } = Vue;
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    createApp({
+      data() {
+        return {
+          greeting: "Maayong buntag! Welcome to my webpage."
+        };
+      }
+    }).mount("#app");
+  </script>
 
-<script>
-  const app = Vue.createApp({
-   data() {
-    return {
-     message: "Hello World!"
-    }
-   }
-  })
-  
-  app.mount('#app')
+  <hr>
 
-</script>
+  <!-- ================= Profile Section ================= -->
+  <section>
+    <h1>Personal Profile</h1>
+
+    <h2>About Me</h2>
+    <p>
+      Hello! My name is <strong>Mark Benedict D. Ani</strong>.  
+      I am currently studying Information Technology and learning web development.
+    </p>
+
+    <h2>Education</h2>
+    <ul>
+      <li>College: Asia Pacific Colleges</li>
+      <li>Senior High School: Saint Joseph Institute of Technology</li>
+    </ul>
+
+    <h2>Interests</h2>
+    <ul>
+      <li>Playing online games</li>
+      <li>Outdoor activities</li>
+      <li>Cooking and sports</li>
+    </ul>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Build a stable IT career</li>
+      <li>Achieve a high-paying job in the future</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- ================= Image Gallery ================= -->
+  <section>
+    <h2>Image Gallery</h2>
+
+    <img src="https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg"
+         alt="Cool Cat"
+         width="300"
+         height="300">
+
+    <img src="https://i.pinimg.com/736x/bf/6e/29/bf6e296386c67b027cd3d234e3c6efa4.jpg"
+         alt="Funny Cat"
+         width="300"
+         height="300">
+  </section>
+
+  <hr>
+
+  <!-- ================= Grid Layout ================= -->
+  <div class="grid-container">
+
+    <div class="header">
+      <h1>Cat World</h1>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li>Introduction</li>
+        <li>Gallery</li>
+        <li>Facts</li>
+        <li>More Cats</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>Why I Like Cats</h1>
+
+      <img src="https://i.pinimg.com/736x/b4/bb/b2/b4bbb2198b036fe1024571ec6b60f8b8.jpg"
+           alt="Serious Cat"
+           width="400"
+           height="250">
+
+      <p>
+        Cats are funny, unpredictable, and sometimes smart or silly.
+      </p>
+      <p>
+        Every cat has a different personality, which makes them interesting.
+      </p>
+    </div>
+
+    <div class="facts">
+      <h2>Cat Facts</h2>
+      <ul>
+        <li>Cats can jump several times their own height.</li>
+        <li>They sleep for most of the day.</li>
+        <li>Each cat has a unique nose pattern.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>Designed by Mark Benedict D. Ani</p>
+    </div>
+
+  </div>
 
 </body>
 </html>
